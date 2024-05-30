@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff5722;
+        }
+        p {
+            margin: 20px 0;
+        }
+        pre {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+        code {
+            display: block;
+            white-space: pre-wrap;
+            color: #c5a5c5;
+        }
+        a {
+            color: #ff5722;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Анимации</h1>
+    <p>UI engine предоставляет достаточно простой API для анимирования свойств объектов.</p>
+    <p>Вы можете изменять свойства элементов без анимации, просто меняя любые компоненты в них:</p>
+    <pre><code>element.align.x = 0.5
+element.color.alpha = 1.0
+element.offset.y = -300.0
+    </code></pre>
+    <p>Также вы можете изменять свойства целиком:</p>
+    <pre><code>element.align = Relative.CENTER
+element.color = BLACK
+element.offset = V3(100.0, -250.0)
+    </code></pre>
+    <p>Чтобы изменять свойства с течением времени, достаточно обернуть все эти вызовы в метод <code>animate(durationInSeconds) {...}</code>:</p>
+    <pre><code>element.animate(0.5) {
+    element.align = Relative.CENTER
+    element.color = BLACK
+    element.offset = V3(100.0, -250.0)
+}
+    </code></pre>
+    <p>Анимации поддерживают так называемые <a href="https://easings.net" target="_blank">easings</a>, UI engine предоставляет большое количество встроенных easing-функций в объекте <code>Easings</code></p>
+    <pre><code>element.animate(1.0, Easings.BACK_OUT) { offset.x = 300.0 }
+    </code></pre>
+    <p>Анимации можно выстраивать друг за другом, используя синтаксис, похожий на <code>thenAccept()</code> в <code>CompletableFuture</code>:</p>
+    <pre><code>element.animate(1.0) {
+    offset.x = 100.0
+} then(2.0) {
+    offset.x = 200.0
+} then(3.0) then() {
+    offset.x = 0.0
+}
+    </code></pre>
+    <p>В вышеприведённом примере элемент сперва переместится на x = 100 за секунду, затем на x = 200 за две секунды, затем подождёт три секунды, и мгновенно окажется на x = 0.0</p>
+    <a href="index.html"_blank">Назад</a>
+</body>
+</html>
