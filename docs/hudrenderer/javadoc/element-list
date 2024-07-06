@@ -1,0 +1,9 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+
+ru.airdead.hudrenderer
+ru.airdead.hudrenderer.element
+ru.airdead.hudrenderer.mixins
+ru.airdead.hudrenderer.stuff
+ru.airdead.hudrenderer.utility
+
