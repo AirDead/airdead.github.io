@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>HudEngine 1.0.0 API </title>
+    <title>HudEngine 1.1.0-dev13 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -117,7 +117,7 @@ var pathtoroot = "../../../";
 public class <span class="typeNameLabel"><a href=HudEngine.html>HudEngine</a></span>
 
                     </pre>
-                    <div class="block"><p>Singleton object representing the UI engine.</p></div>
+                    <div class="block"><p>The <code>HudEngine</code> object is responsible for initializing and managing the HUD rendering and client tick events.</p></div>
 
                     <dl>
 
@@ -173,7 +173,7 @@ public class <span class="typeNameLabel"><a href=HudEngine.html>HudEngine</a></s
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>public  static <a href=stuff/ClientApi.html>ClientApi</a></code></td>
+                                            <td class="colFirst"><code>private final <a href=stuff/ClientApi.html>ClientApi</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=HudEngine.html#clientApi>clientApi</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -268,31 +268,55 @@ public class <span class="typeNameLabel"><a href=HudEngine.html>HudEngine</a></s
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=HudEngine.html#initialize()>initialize</a>() </code>
                                             </th>
-                                            <td class="colLast">Initializes the UI engine.</td>
+                                            <td class="colLast">Initializes the HUD engine.</td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>final static <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=HudEngine.html#unInitialize()>unInitialize</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=HudEngine.html#getMousePosition(net.minecraft.client.MinecraftClient)>getMousePosition</a>(MinecraftClient client) </code>
                                             </th>
-                                            <td class="colLast">Uninitializes the UI engine.</td>
+                                            <td class="colLast">Gets the current mouse position.</td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=HudEngine.html#isHudHide()>isHudHide</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=HudEngine.html#isMouseClicked(net.minecraft.client.MinecraftClient,java.lang.Integer)>isMouseClicked</a>(MinecraftClient client, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> button) </code>
                                             </th>
-                                            <td class="colLast">Indicates whether the HUD is hidden.</td>
+                                            <td class="colLast">Checks if the mouse button is clicked.</td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
+                                            <td class="colFirst"><code>final static <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=HudEngine.html#unInitialize()>unInitialize</a>() </code>
+                                            </th>
+                                            <td class="colLast">Uninitializes the HUD engine.</td>
+                                        </tr>
+                                        
+                                        <tr id="i4" class="altColor">
+                                            <td class="colFirst"><code>final <a href=stuff/ClientApi.html>ClientApi</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=HudEngine.html#getClientApi()>getClientApi</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i5" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=HudEngine.html#isHudHide()>isHudHide</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i6" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=HudEngine.html#setHudHide(java.lang.Boolean)>setHudHide</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> isHudHide) </code>
                                             </th>
-                                            <td class="colLast">Indicates whether the HUD is hidden.</td>
+                                            <td class="colLast"></td>
                                         </tr>
                                         
                                         </tbody>
@@ -348,12 +372,82 @@ public class <span class="typeNameLabel"><a href=HudEngine.html>HudEngine</a></s
                                     <li class="blockList">
                                         <h4>initialize</h4>
                                         <pre class="methodSignature"> final static <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=HudEngine.html#initialize()>initialize</a>()</pre>
-                                        <div class="block"><p>Initializes the UI engine.</p></div>
+                                        <div class="block"><p>Initializes the HUD engine. Registers the HUD render callback and client tick event. This method should only be called once.</p></div>
 
                                         <dl>
 
                                         
 
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getMousePosition(net.minecraft.client.MinecraftClient)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getMousePosition</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a>&gt; <a href=HudEngine.html#getMousePosition(net.minecraft.client.MinecraftClient)>getMousePosition</a>(MinecraftClient client)</pre>
+                                        <div class="block"><p>Gets the current mouse position.</p></div>
+
+                                        <dl>
+
+                                        
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>client</code> - The Minecraft client instance.</dd>
+                                            
+                                            
+                                        
+
+                                        
+                                            <dt><span class="returnLabel">Returns:</span></dt>
+                                            <dd><p>The current mouse position.</p></dd>
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="isMouseClicked(net.minecraft.client.MinecraftClient,java.lang.Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>isMouseClicked</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=HudEngine.html#isMouseClicked(net.minecraft.client.MinecraftClient,java.lang.Integer)>isMouseClicked</a>(MinecraftClient client, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> button)</pre>
+                                        <div class="block"><p>Checks if the mouse button is clicked.</p></div>
+
+                                        <dl>
+
+                                        
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>client</code> - The Minecraft client instance.</dd>
+                                            
+                                            
+                                            
+                                            <dd><code>button</code> - The mouse button to check.</dd>
+                                            
+                                            
+                                        
+
+                                        
+                                            <dt><span class="returnLabel">Returns:</span></dt>
+                                            <dd><p><code>true</code> if the mouse button is clicked, <code>false</code> otherwise.</p></dd>
                                         
 
                                         
@@ -371,7 +465,30 @@ public class <span class="typeNameLabel"><a href=HudEngine.html>HudEngine</a></s
                                     <li class="blockList">
                                         <h4>unInitialize</h4>
                                         <pre class="methodSignature"> final static <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=HudEngine.html#unInitialize()>unInitialize</a>()</pre>
-                                        <div class="block"><p>Uninitializes the UI engine.</p></div>
+                                        <div class="block"><p>Uninitializes the HUD engine. Resets the initialization flag.</p></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getClientApi()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getClientApi</h4>
+                                        <pre class="methodSignature"> final <a href=stuff/ClientApi.html>ClientApi</a> <a href=HudEngine.html#getClientApi()>getClientApi</a>()</pre>
+                                        <div class="block"></div>
 
                                         <dl>
 
@@ -394,7 +511,7 @@ public class <span class="typeNameLabel"><a href=HudEngine.html>HudEngine</a></s
                                     <li class="blockList">
                                         <h4>isHudHide</h4>
                                         <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=HudEngine.html#isHudHide()>isHudHide</a>()</pre>
-                                        <div class="block"><p>Indicates whether the HUD is hidden.</p></div>
+                                        <div class="block"></div>
 
                                         <dl>
 
@@ -417,7 +534,7 @@ public class <span class="typeNameLabel"><a href=HudEngine.html>HudEngine</a></s
                                     <li class="blockList">
                                         <h4>setHudHide</h4>
                                         <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=HudEngine.html#setHudHide(java.lang.Boolean)>setHudHide</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> isHudHide)</pre>
-                                        <div class="block"><p>Indicates whether the HUD is hidden.</p></div>
+                                        <div class="block"></div>
 
                                         <dl>
 

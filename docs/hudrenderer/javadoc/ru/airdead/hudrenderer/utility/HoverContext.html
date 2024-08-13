@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>HoverContext 1.0.0 API </title>
+    <title>HoverContext 1.1.0-dev13 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -178,6 +178,18 @@ public final class <span class="typeNameLabel"><a href=HoverContext.html>HoverCo
                                             <td class="colLast"></td>
                                         </tr>
                                         
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=HoverContext.html#mouseX>mouseX</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=HoverContext.html#mouseY>mouseY</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </li>
@@ -204,7 +216,7 @@ public final class <span class="typeNameLabel"><a href=HoverContext.html>HoverCo
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#HoverContext(java.lang.Boolean)">HoverContext</a></span>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> isHovered)</code></th>
+                                                        href="#HoverContext(java.lang.Boolean,java.lang.Double,java.lang.Double)">HoverContext</a></span>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> isHovered, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a> mouseX, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a> mouseY)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -265,6 +277,22 @@ public final class <span class="typeNameLabel"><a href=HoverContext.html>HoverCo
                                             <td class="colLast">Indicates whether the element is hovered.</td>
                                         </tr>
                                         
+                                        <tr id="i1" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=HoverContext.html#getMouseX()>getMouseX</a>() </code>
+                                            </th>
+                                            <td class="colLast">The x coordinate of the mouse.</td>
+                                        </tr>
+                                        
+                                        <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=HoverContext.html#getMouseY()>getMouseY</a>() </code>
+                                            </th>
+                                            <td class="colLast">The y coordinate of the mouse.</td>
+                                        </tr>
+                                        
                                         </tbody>
                                     </table>
                                 </div>
@@ -296,11 +324,11 @@ public final class <span class="typeNameLabel"><a href=HoverContext.html>HoverCo
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="HoverContext(java.lang.Boolean)"></a>
+                                <a name="HoverContext(java.lang.Boolean,java.lang.Double,java.lang.Double)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>HoverContext</h4>
-                                        <pre>HoverContext(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> isHovered)</pre>
+                                        <pre>HoverContext(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> isHovered, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a> mouseX, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a> mouseY)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -323,12 +351,58 @@ public final class <span class="typeNameLabel"><a href=HoverContext.html>HoverCo
                                     <!--   -->
                                 </a>
                                 <ul class=
-                                              "blockListLast"
+                                              "blockList"
                                           >
                                     <li class="blockList">
                                         <h4>isHovered</h4>
                                         <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=HoverContext.html#isHovered()>isHovered</a>()</pre>
                                         <div class="block"><p>Indicates whether the element is hovered.</p></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getMouseX()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getMouseX</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a> <a href=HoverContext.html#getMouseX()>getMouseX</a>()</pre>
+                                        <div class="block"><p>The x coordinate of the mouse.</p></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getMouseY()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getMouseY</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a> <a href=HoverContext.html#getMouseY()>getMouseY</a>()</pre>
+                                        <div class="block"><p>The y coordinate of the mouse.</p></div>
 
                                         <dl>
 

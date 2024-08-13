@@ -2,8 +2,15 @@ $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 
 ru.airdead.hudrenderer
+ru.airdead.hudrenderer.animation
 ru.airdead.hudrenderer.element
+ru.airdead.hudrenderer.element.line
+ru.airdead.hudrenderer.element.rectangle
+ru.airdead.hudrenderer.element.text
+ru.airdead.hudrenderer.event
+ru.airdead.hudrenderer.event.hud
 ru.airdead.hudrenderer.mixins
+ru.airdead.hudrenderer.net
 ru.airdead.hudrenderer.stuff
 ru.airdead.hudrenderer.utility
 
